@@ -39,6 +39,11 @@ app.get("/protected", authenticate, (req, res) => {
   res.send(`Hello ${req.user.name}, you have accessed a protected route!`);
 });
 
+// Route to test authentication
+app.get("/", (req, res) => {
+  res.send(`Hello`);
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
